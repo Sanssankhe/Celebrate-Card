@@ -1,0 +1,158 @@
+:root{
+  --primary: #FF00FF;
+  --secondary: #151B54;
+  --dark: #212121;
+  --light: #f3f3f3;
+}
+*{
+  margin:0;
+  padding: 0;
+}
+body
+		{
+      font-family: 'Courier New', Courier, monospace;
+      width: 100%;
+      min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.mail
+		{
+			width: 400px;
+			height: 300px;
+			position: relative;
+			background-color: #fc42fc;
+			border-radius: 0px 0px 20px 20px;
+			transform-style: preserve-3d;
+			perspective: 700px;
+			cursor: pointer;
+		}
+		.mail:before
+		{
+			content: '';
+			position: absolute;
+			border-left: 200px solid transparent;
+			border-right: 200px solid #d101d1;
+			border-top: 150px solid transparent;
+			border-bottom: 150px solid #d101d1;
+			border-radius: 0px 0px 20px 20px;
+			z-index: 5;
+
+		}
+		.mail:after
+		{
+			content: '';
+			position: absolute;
+			border-left: 200px solid #fa10fa;
+			border-right: 200px solid transparent;
+			border-top: 150px solid transparent;
+			border-bottom: 150px solid #fa10fa;
+			border-radius: 0px 0px 20px 20px;
+
+		}
+		.mail .cover
+		{
+			position: absolute;
+			border-left: 200px solid transparent;
+			border-right: 200px solid transparent;
+			border-top: 150px solid #fc42fc;
+			border-bottom: 150px solid transparent;
+			transform-origin: top;
+			transition:1s 1s ease;
+			z-index: 4;
+		}
+		.mail:hover .cover
+		{
+			transform: rotateX(180deg);
+			transition: 1s ease;
+		}
+		.mail .image
+		{
+			position: absolute;
+			width:380px;
+			left: 10px;
+			height: 290px;
+			top: 10px;
+			background-color: red;
+			border-radius: 0px 0px 20px 20px;
+			background-image: url("images/Welcome\ Card.jpg");
+			background-size: cover;
+			background-position: center center;
+			transition: 1s ease;
+			box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+		}
+		.mail:hover .image
+		{
+			top: -140px;
+			transition: 1s 1s ease;
+		}
+
+    .card{
+      margin: 100px auto 0;
+      width: 400px;
+      height: 300px;
+    }
+
+    .card__inner{
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card__inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card__face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .card__face--front {
+      background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card__face--front h2 {
+      color: #FFF;
+      font-size: 32px;
+    }
+
+    .card__face--back {
+      background-color: var(--light);
+      transform: rotateY(180deg);
+    }
+
+    .card__content {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card__header {
+      position: relative;
+    }
+
+    .card__header:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+      z-index: -1;
+    }
+
